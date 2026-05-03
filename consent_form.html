@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>집단 프로그램 참가 동의서 | 심리상담연구소 심지</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #3E5C3A;
+    --green-sage: #ACCFAC;
+    --green-light: #e8f0e8;
+    --cream: #FAF7F2;
+    --warm-gray: #8a8078;
+    --text-dark: #2c2c2c;
+    --text-body: #4a4540;
+    --border: #d8cfc4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--text-body);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    padding: 48px 16px 80px;
+  }
+
+  .letter-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 헤더 */
+  .letter-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-mark {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+  }
+
+  .logo-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .institute-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--warm-gray);
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+  }
+
+  .form-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--green-deep);
+    letter-spacing: 0.05em;
+  }
+
+  /* 레터 바디 */
+  .letter-body {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 48px 52px;
+    box-shadow: 0 2px 20px rgba(62,92,58,0.06);
+  }
+
+  .opening {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 2;
+    color: var(--text-body);
+    margin-bottom: 36px;
+    padding-bottom: 32px;
+    border-bottom: 1px dashed var(--border);
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* 약속 섹션 */
+  .section {
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.2s; }
+  .section:nth-child(2) { animation-delay: 0.35s; }
+  .section:nth-child(3) { animation-delay: 0.5s; }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 14px;
+    background: var(--green-sage);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .section-body {
+    font-size: 13.5px;
+    line-height: 2;
+    color: var(--text-body);
+    padding-left: 14px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .section-body p {
+    margin-bottom: 8px;
+  }
+
+  .section-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .exception-list {
+    list-style: none;
+    padding-left: 8px;
+    margin-top: 8px;
+  }
+
+  .exception-list li {
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--warm-gray);
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .exception-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--green-sage);
+  }
+
+  .closing {
+    font-size: 13.5px;
+    line-height: 2;
+    color: var(--text-body);
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px dashed var(--border);
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 300;
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* 동의 영역 */
+  .consent-area {
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+  }
+
+  .consent-check-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding: 20px;
+    background: var(--green-light);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .consent-check-wrap input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--green-sage);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .consent-check-wrap input[type="checkbox"]:checked {
+    background: var(--green-deep);
+    border-color: var(--green-deep);
+  }
+
+  .consent-check-wrap input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+
+  .consent-label {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--green-deep);
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  /* 이름 입력 */
+  .name-area {
+    margin-bottom: 28px;
+  }
+
+  .name-label {
+    display: block;
+    font-size: 13px;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .name-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-dark);
+    background: white;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .name-input:focus {
+    border-color: var(--green-sage);
+  }
+
+  .name-input::placeholder {
+    color: #c5bdb5;
+  }
+
+  /* 제출 버튼 */
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--green-deep);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .submit-btn:hover {
+    background: #2d4329;
+  }
+
+  .submit-btn:active {
+    transform: scale(0.99);
+  }
+
+  .submit-btn:disabled {
+    background: #b0b8ae;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* 완료 메시지 */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .success-msg.show { display: block; }
+
+  .success-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--green-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 24px;
+  }
+
+  .success-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    color: var(--green-deep);
+    margin-bottom: 12px;
+  }
+
+  .success-body {
+    font-size: 13.5px;
+    color: var(--warm-gray);
+    line-height: 1.9;
+  }
+
+  /* 에러 메시지 */
+  .error-msg {
+    display: none;
+    color: #c0392b;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .error-msg.show { display: block; }
+
+  /* 푸터 */
+  .letter-footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 12px;
+    color: #c5bdb5;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 600px) {
+    .letter-body {
+      padding: 32px 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="letter-wrap">
+
+  <div class="letter-header">
+    <div class="logo-mark"><img src="https://raw.githubusercontent.com/simjimind/nabi_apply_2026/main/Flower.png" alt="심지 로고"></div>
+    <p class="institute-name">심리상담연구소 심지</p>
+    <h1 class="form-title">집단 프로그램 참가 동의서</h1>
+  </div>
+
+  <div class="letter-body">
+
+    <div class="opening">
+      우리의 다양한 모습이 있는 그대로 존중받는<br>
+      안전한 공간이 되길 기원합니다.<br>
+      누군가에게 나의 이야기를 표현하는 것은<br>
+      때로 용기가 필요한 일임을 잘 알고 있습니다.<br><br>
+      우리 모두가 서로를 믿고 편안하게 머물 수 있도록<br>
+      시작하기 전 몇 가지 소중한 약속을 나누고자 합니다.
+    </div>
+
+    <div class="sections">
+      <div class="section">
+        <div class="section-title">1. 서로의 마음을 지켜주는 약속 (비밀보장)</div>
+        <div class="section-body">
+          <p>이 공간에서 나눈 다른 분들의 이야기와 감정은 오직 이곳에만 남겨두기로 합니다.</p>
+          <p>밖에서 우연히 마주치더라도, 집단 안에서 들었던 사적인 이야기나 서로의 신상에 대해서는 비밀을 지켜주세요.</p>
+          <p>내가 여기서 얻은 깨달음이나 나의 감정은 자유롭게 기록하고 나누셔도 좋지만, 다른 누군가를 떠올리게 하는 글이나 사진은 서로의 동의 없이 SNS나 온라인에 올리지 않습니다.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">2. 모두의 안전을 위한 상담자의 책임 (비밀보장의 예외)</div>
+        <div class="section-body">
+          <p>상담자인 저 김이수는 여러분의 이야기를 무겁고 소중하게 지킬 것입니다. 다만, 우리 모두의 소중한 생명과 안전을 지키기 위해 아래와 같은 위급한 상황에서는 최소한의 울타리가 되어줄 수 있는 기관이나 가족에게 도움을 요청해야 할 의무가 있음을 알립니다.</p>
+          <ul class="exception-list">
+            <li>나와 타인의 생명이나 신체에 명백한 위험이 예상될 때</li>
+            <li>스스로를 보호하기 어려운 분들(아동, 노인 등)에 대한 학대가 우려될 때</li>
+            <li>법적인 절차로 인해 안전을 위한 정보 제공이 불가피할 때</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">3. 함께 만들어가는 신뢰의 공간</div>
+        <div class="section-body">
+          <p>나는 다른 분들의 아픔과 이야기를 소중히 다루며, 누군가에게 상처가 되지 않도록 이 약속을 진심으로 지키겠습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="closing">
+      우리가 함께 만들어갈 이 시간이,<br>
+      서로를 따뜻하게 돌보는 편안한 쉼터가 되기를 바랍니다.
+    </div>
+
+    <!-- 동의 영역 -->
+    <div class="consent-area" id="consentArea">
+      <label class="consent-check-wrap">
+        <input type="checkbox" id="agreeCheck">
+        <span class="consent-label">위의 약속을 충분히 읽었으며, 진심으로 동의합니다.</span>
+      </label>
+
+      <div class="name-area">
+        <label class="name-label" for="nameInput">참가자 이름</label>
+        <input type="text" id="nameInput" class="name-input" placeholder="이름을 입력해 주세요">
+      </div>
+
+      <button class="submit-btn" id="submitBtn" onclick="submitConsent()">동의하고 제출하기</button>
+      <p class="error-msg" id="errorMsg">이름을 입력하고 동의 체크를 해주세요.</p>
+    </div>
+
+    <!-- 완료 메시지 -->
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">🌿</div>
+      <p class="success-title">동의서가 제출되었습니다</p>
+      <p class="success-body">소중한 약속을 함께해 주셔서 감사합니다.<br>따뜻하고 안전한 시간이 되기를 기대합니다.</p>
+    </div>
+
+  </div>
+
+  <p class="letter-footer">심리상담연구소 심지 · simjimind@gmail.com</p>
+
+</div>
+
+<script>
+  const WORKER_URL = 'https://simji-consent.simjimind.workers.dev';
+
+  async function submitConsent() {
+    const name    = document.getElementById('nameInput').value.trim();
+    const agreed  = document.getElementById('agreeCheck').checked;
+    const errorEl = document.getElementById('errorMsg');
+
+    if (!name || !agreed) {
+      errorEl.classList.add('show');
+      return;
+    }
+    errorEl.classList.remove('show');
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = '제출 중...';
+
+    try {
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          programName: '집단 프로그램'
+        })
+      });
+
+      if (res.ok) {
+        document.getElementById('consentArea').style.display = 'none';
+        document.getElementById('successMsg').classList.add('show');
+      } else {
+        const err = await res.json();
+        console.error(err);
+        btn.disabled = false;
+        btn.textContent = '동의하고 제출하기';
+        errorEl.textContent = '제출 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
+        errorEl.classList.add('show');
+      }
+    } catch (e) {
+      console.error(e);
+      btn.disabled = false;
+      btn.textContent = '동의하고 제출하기';
+      errorEl.textContent = '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
+      errorEl.classList.add('show');
+    }
+  }
+</script>
+
+</body>
+</html>
